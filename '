@@ -1,0 +1,19 @@
+# vim open buffer files
+*.swp
+
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+/dist
+/build/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+
+# Directory for PyCharm stuff
+/.idea
+
+# Ignore all compiled python files
+*.pyc
+/__pycache__
