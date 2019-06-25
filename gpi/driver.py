@@ -1,21 +1,20 @@
-#! /usr/bin/python3
 
-## Pure Python Imports
+# Pure Python Imports
 import sys
 
-## PyQt5 Imports
+# PyQt5 Imports
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStatusBar
 
-
+# gpi imports
 from gpi import view
 from gpi.helpers.menuHelpers import newAction
-
+from gpi.helpers import dialogs
 
 class mainWindow(QMainWindow):
     
     def __init__(self):
         QMainWindow.__init__(self)
-        self.setWindowTitle( 'Instruction Set Editor' )
+        self.setWindowTitle( 'Graphical Program Interface' )
 
         ## Set Status Bar
         self.statusBar = QStatusBar()
@@ -54,8 +53,8 @@ def menuBuilder(GUI , astGui, mainMenu):
     # Developer helper, print the AST in its current state
     fileMenu.addAction( newAction(GUI, '&Print',  astGui.printer            , Shortcut="Ctrl+P") )
 
-    AboutTitle = 'De-La-Mo Instruction Set Editor'
-    AboutText  = 'Create new instruction sets\nfor De-La-Mo composite delamination modeller.\nDeveloped at the Center for Nondestructive Evaluation,\nIowa State University.'
+    AboutTitle = 'Graphical Program Interface'
+    AboutText  = 'Graphical user interface for editing simple or well templated python scripts.'
     helpMenu.addAction( newAction(GUI, 'About',   lambda _ ,title=AboutTitle, text=AboutText :  dialogs.genDialog( title , text ) ) )
 
 # Run the program
