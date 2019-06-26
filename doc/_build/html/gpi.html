@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Submodules &#8212; gpi  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to gpi’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submodules">
+<h1>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-gpi.driver">
+<span id="autofiber-generator"></span><h2>AutoFiber generator<a class="headerlink" href="#module-gpi.driver" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gpi.driver.mainWindow">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.driver.</code><code class="sig-name descname">mainWindow</code><a class="headerlink" href="#gpi.driver.mainWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QMainWindow</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">gpi.driver.</code><code class="sig-name descname">mainWindow</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QMainWindow</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-gpi.widgets.standardWidgets">
+<span id="autofiber-geodesic"></span><h2>AutoFiber geodesic<a class="headerlink" href="#module-gpi.widgets.standardWidgets" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.ASTWidget">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">ASTWidget</code><span class="sig-paren">(</span><em class="sig-param">AST</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.ASTWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QFrame</span></code></p>
+<dl class="method">
+<dt id="gpi.widgets.standardWidgets.ASTWidget.move">
+<code class="sig-name descname">move</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">QPoint</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.ASTWidget.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>move(self, int, int)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gpi.widgets.standardWidgets.ASTWidget.updateLineNo">
+<code class="sig-name descname">updateLineNo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.ASTWidget.updateLineNo" title="Permalink to this definition">¶</a></dt>
+<dd><p># for key in self.branchID_2_widget.keys():
+#     w = self.branchID_2_widget[key]</p>
+<blockquote>
+<div><p># Put in the line number
+# print(dir(w))
+if ‘lineNumbers’ in dir(w):</p>
+<blockquote>
+<div><p>w.line_number.setText(w.lineNumbers(w.node))</p>
+</div></blockquote>
+<dl class="simple">
+<dt>else:</dt><dd><p>w.line_number.setText(astHelpers.lineNumbers(w.node))</p>
+</dd>
+</dl>
+<p># Put in the ast branch index
+# index = self.branchID_2_branch().index(key)
+# w.line_number.setText(str(index))</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.assignmentCallWidget">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">assignmentCallWidget</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.assignmentCallWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.callWidget">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">callWidget</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.callWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.commentCatch">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">commentCatch</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.commentCatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.emptyLineCatch">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">emptyLineCatch</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.emptyLineCatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.fallbackLE">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">fallbackLE</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.fallbackLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.fallbackMulti">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">fallbackMulti</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.fallbackMulti" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.forLoopCatch">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">forLoopCatch</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.forLoopCatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.getNumberingThread">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">getNumberingThread</code><span class="sig-paren">(</span><em class="sig-param">branchID_2_widget</em>, <em class="sig-param">slot</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.getNumberingThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtCore.QThread</span></code></p>
+<dl class="method">
+<dt id="gpi.widgets.standardWidgets.getNumberingThread.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.getNumberingThread.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go over every item in the self.subreddits list
+(which was supplied during __init__)
+and for every item assume it’s a string with valid subreddit
+name and fetch the top post using the _get_top_post method
+from reddit. Store the result in a local variable named
+top_post and then emit a SIGNAL add_post(QString) where
+QString is equal to the top_post variable that was set by the
+_get_top_post function.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="gpi.widgets.standardWidgets.ifelseCatch">
+<em class="property">class </em><code class="sig-prename descclassname">gpi.widgets.standardWidgets.</code><code class="sig-name descname">ifelseCatch</code><span class="sig-paren">(</span><em class="sig-param">trueNode</em>, <em class="sig-param">astTools</em><span class="sig-paren">)</span><a class="headerlink" href="#gpi.widgets.standardWidgets.ifelseCatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpi.widgets.templateWidget.nodeHandler</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="autofiber-optimization">
+<h2>AutoFiber optimization<a class="headerlink" href="#autofiber-optimization" title="Permalink to this headline">¶</a></h2>
+<p># .. automodule:: autofiber.optimization
+#    :members:
+#    :show-inheritance:</p>
+</div>
+<div class="section" id="autofiber-analyze-uv">
+<h2>AutoFiber analyze_uv<a class="headerlink" href="#autofiber-analyze-uv" title="Permalink to this headline">¶</a></h2>
+<p># .. automodule:: autofiber.analyze_uv
+#    :members:
+#    :show-inheritance:</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">gpi</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Submodules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-gpi.driver">AutoFiber generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-gpi.widgets.standardWidgets">AutoFiber geodesic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autofiber-optimization">AutoFiber optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autofiber-analyze-uv">AutoFiber analyze_uv</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to gpi’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Jared Taylor.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gpi.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
