@@ -11,7 +11,6 @@ from gpi.helpers.menuHelpers import newAction
 from gpi.helpers import dialogs
 
 class mainWindow(QMainWindow):
-    
     def __init__(self):
         QMainWindow.__init__(self)
         self.setWindowTitle( 'Graphical Program Interface' )
