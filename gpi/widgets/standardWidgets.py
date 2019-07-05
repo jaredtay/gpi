@@ -28,13 +28,20 @@ def getWidgets():
 
 # ===========================================================================================
 class assignmentCallWidget(nodeHandler):
-    # This is a widget framework specialized for assignment widgets
-    # It works by identifying an assignment node in the first level of the ast
-    # Makes a vertical layout, titles it with a label with the function name in it
-    # Drops output labels and line edits, one for each output
-    # Drops input labels and line edits, one for each input
+    """
+    This is a widget framework specialized for assignment widgets
+    It works by identifying an assignment node in the first level of the ast
+    Makes a vertical layout, titles it with a label with the function name in it
+    Drops output labels and line edits, one for each output
+    Drops input labels and line edits, one for each input
+    """
     value = 4
     def __init__(self, trueNode, astTools):
+        """
+
+        :param trueNode:
+        :param astTools:
+        """
         nodeHandler.__init__(self , trueNode, astTools)
 
     @classmethod

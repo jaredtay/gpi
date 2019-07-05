@@ -1,29 +1,18 @@
 Submodules
 ==========
 
-AutoFiber generator
+Driver
 -------------------
-.. automodule:: gpi.driver
+.. automodule:: gpi
    :members:
-   :show-inheritance:
+
 .. autoclass:: gpi.driver.mainWindow
    :members:
-   :show-inheritance:
 
-AutoFiber geodesic
+Standard Widgets
 ------------------
 .. automodule:: gpi.widgets.standardWidgets
    :members:
-   :show-inheritance:
 
-AutoFiber optimization
-----------------------
-# .. automodule:: autofiber.optimization
-#    :members:
-#    :show-inheritance:
-
-AutoFiber analyze_uv
---------------------
-# .. automodule:: autofiber.analyze_uv
-#    :members:
-#    :show-inheritance:
+.. autoclass:: gpi.widgets.standardWidgets.assignmentCallWidget
+   :members:
