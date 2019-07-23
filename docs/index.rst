@@ -47,7 +47,7 @@ Plugins
 
 GPI is easily extended thanks to a plugin architecture. Any modules installed with the `gpi_` prefix will be loaded in, and any widgets definedin the plugins will be injected using the `getWidgets()` and `getIntros()` methods.
 
-An example project that uses and extends GPI is `De-la-mo-v2 <https://git.linux.iastate.edu/NASA-AK/de-la-mo-v2>`_.
+An example plugin `gpi_delamo <https://github.com/jaredtay/gpi_delamo>`_ was created to use with `De-la-mo-v2 <https://github.com/idealab-isu/de-la-mo-v2>`_.
 
 Indices and tables
 ==================
