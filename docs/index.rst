@@ -42,6 +42,8 @@ Running GPI
 
 The program can be run simply using the `gpi` command. There is an example in the examples folder that illustrates some default behaviors for common code elements.
 
+gpi works best for simple code interfaces, though more complex interfaces can be built for more complex code segments. If the program fails to build a clear interface, right click on the line number and select `Raw`. This will rebuild the interface for that code segment as raw text.
+
 Plugins
 =======
 

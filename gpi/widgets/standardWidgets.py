@@ -383,7 +383,7 @@ class forLoopCatch(nodeHandler):
             logs.update(t)
 
         return widget , logs
-# """
+
 class ifelseCatch(nodeHandler):
     # The value of the widget dictates its priority
     value = 10
@@ -482,9 +482,7 @@ class ifelseCatch(nodeHandler):
 
         return else_widget , space_widget , logs
 
-# """
 # ======================================================================================================
-
 
 class ASTWidget(QFrame):
     # One Dictionary to have all the widgets with their branch id's as keys
@@ -818,17 +816,6 @@ class ASTWidget(QFrame):
     def updateLineNo(self):
         # Loop through each widget in the gui
         """
-        # for key in self.branchID_2_widget.keys():
-        #     w = self.branchID_2_widget[key]
-            # Put in the line number
-            # print(dir(w))
-            if 'lineNumbers' in dir(w):
-                w.line_number.setText(w.lineNumbers(w.node))
-            else:
-                w.line_number.setText(astHelpers.lineNumbers(w.node))
-            # Put in the ast branch index
-            # index = self.branchID_2_branch().index(key)
-            # w.line_number.setText(str(index))
         """
         self.get_thread = getNumberingThread(self.branchID_2_widget, self.updateLineNumber)
         self.get_thread.start()
@@ -841,63 +828,40 @@ class ASTWidget(QFrame):
             w.line_number.setText(line_numbers[i])
 
 class getNumberingThread(QThread):
+    """
+    Parse the abstract syntax tree to find all the line numbers in the 
+    background. When all the line numbers are found, pass them back out 
+    and populate the gui with them.
 
+    :param branchID_2_widget: connect the ast branch id to the widget
+    :type branchID_2_widget: dict
+    :param slot: function to call when all the work is done
+    :type slot: function
+    """
+
+    # Make a signal to do all the gui work when the line numbers are ready
     signal = pyqtSignal(list, list)
 
     def __init__(self, branchID_2_widget, slot):
-        """
-        Make a new thread instance with the specified
-        subreddits as the first argument. The subreddits argument
-        will be stored in an instance variable called subreddits
-        which then can be accessed by all other class instance functions
-
-        :param subreddits: A list of subreddit names
-        :type subreddits: list
-        """
         QThread.__init__(self)
         self.branchID_2_widget = branchID_2_widget
 
         self.signal.connect(slot)
 
-    # def __del__(self):
-    #     self.wait()
-
     def run(self):
-        """
-        Go over every item in the self.subreddits list
-        (which was supplied during __init__)
-        and for every item assume it's a string with valid subreddit
-        name and fetch the top post using the _get_top_post method
-        from reddit. Store the result in a local variable named
-        top_post and then emit a SIGNAL add_post(QString) where
-        QString is equal to the top_post variable that was set by the
-        _get_top_post function.
-
-        """
-        # for subreddit in self.branchID_2_widget:
-        #     top_post = self._get_top_post(subreddit)
-        #     self.emit(SIGNAL('add_post(QString)'), top_post)
-        #     self.sleep(2)
         linenumber_strings = []
         id_strings = []
-        self.sleep(1)
+
         for key in self.branchID_2_widget.keys():
             w = self.branchID_2_widget[key]
-            # Put in the line number
-            # print(dir(w))
+            # Check to see if lineNumbers method is defined in the widget class
+            # If not, use the standard one in astHelpers
             if 'lineNumbers' in dir(w):
-                # w.line_number.setText(w.lineNumbers(w.node))
                 line_numbers = w.lineNumbers(w.node)
             else:
-                # w.line_number.setText(astHelpers.lineNumbers(w.node))
                 line_numbers = astHelpers.lineNumbers(w.node)
 
-            # print(line_numbers)
-            # print(id(w.node))
             linenumber_strings.append(line_numbers)
             id_strings.append(str(key))
 
         self.signal.emit(linenumber_strings, id_strings)
-            # Put in the ast branch index
-            # index = self.branchID_2_branch().index(key)
-            # w.line_number.setText(str(index))
