@@ -7,3 +7,14 @@ Created to be part of the [De-La-Mo-V2](https://github.com/idealab-isu/de-la-mo-
 AutoFiber is Copyright (C) 2016-2019 Iowa State University
 Research Foundation, Inc. It is published under the
 Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
+
+## Installation
+Once all dependencies are installed run:
+```
+python setup.py build
+python setup.py install
+```
+
+## How to run
+The program can be run using the `gpi` command. An example of the capabilities of the software can be seen in `examples/simple.py`.
+
