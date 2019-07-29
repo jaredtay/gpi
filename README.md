@@ -16,5 +16,5 @@ python setup.py install
 ```
 
 ## How to run
-The program can be run using the `gpi` command. An example of the capabilities of the software can be seen in `examples/simple.py`.
+The program can be run using the `gpi` command. An example of the capabilities of the software can be seen by opening `examples/simple.py` within the program.
 
